@@ -6,7 +6,7 @@ Nexus for Engagement, Measurement & Optimization: an evidence-driven Growth Deci
 Intelligence Platform in development. NEMO's intended output is an auditable Decision
 Case, linking trustworthy observations to evidence, actions, and measured outcomes.
 
-**Current status: Milestone 6 — Blind Evaluation Harness.** Canonical source contracts,
+**Current status: Milestone 7 — Customer Economics.** Canonical source contracts,
 a dbt/DuckDB warehouse and acquisition metrics are implemented alongside the reference
 synthetic producer. Snowflake configuration is prepared but not live-verified.
 Purchase reconciliation and dependency-specific recommendation gating are implemented.
@@ -143,7 +143,7 @@ not a claim that any external connector is operational.
 
 Snowflake is **not live-verified**. Optional adapter dependencies and deployment templates
 exist; no account resources or grants were created. The local warehouse is fully runnable
-without commercial credentials. Next: Milestone 7 after **proceed**.
+without commercial credentials. Next: Milestone 8 after **proceed**.
 
 ## Measurement integrity
 Canonical purchase events reconcile to paid orders under an explicit public contract.
@@ -180,7 +180,7 @@ a causal deployment failure or incremental profit.
 - [Milestone 5 architecture, contracts, tests and limitations](docs/milestone-5.md)
 
 The latest demonstration cases are indexed in artifacts/milestone-5/index.json.
-Stop before Milestone 7 until **proceed**.
+Stop before Milestone 8 until **proceed**.
 
 ## Milestone progress
 This table and the linked reports are updated with each verified milestone.
@@ -194,9 +194,10 @@ This table and the linked reports are updated with each verified milestone.
 | 4 — Measurement Integrity | Complete | [M4](docs/milestone-4.md) |
 | 5 — First Decision Case | Complete | [M5](docs/milestone-5.md) |
 | 6 — Blind Evaluation Harness | Complete | [M6](docs/milestone-6.md) |
-| 7 — Customer Economics | Next; awaiting proceed | Not started |
+| 7 — Customer Economics | Complete | [M7](docs/milestone-7.md) |
+| 8 — Journey Reconstruction | Next; awaiting proceed | Not started |
 
-Current validation: 148 tests pass, with Ruff, dbt and package verification.
+Current validation: 165 tests pass, with Ruff, dbt and package verification.
 Generated demonstration data, warehouse files and private lab truth remain local;
 the reports and learning guides include commands to reproduce them.
 
@@ -213,3 +214,19 @@ retained and explained. Held-out results are 9/9 on one world, not a production 
     .venv/Scripts/python.exe -m nemo.blind_lab score --root artifacts/milestone-6 --split held_out
 
 The full prepare/predict/score workflow is documented for a new output directory.
+
+## Customer economics and learning guide
+M7 adds first-observed buyer cohorts, calendar-month purchase retention, historical
+net merchandise value and scoped contribution before acquisition costs and fixed
+overhead. Incomplete periods and missing refund/cost coverage remain unknown.
+The original source has no costs; a separate, explicitly labelled assumed-cost demo
+exercises contribution without presenting it as real company profit.
+
+- [Customer economics contracts and practical walkthrough](docs/customer-economics.md)
+- [Learning guide: cohorts, retention, historical value and contribution](docs/learning-customer-economics.md)
+- [Milestone 7 implementation, verification and limits](docs/milestone-7.md)
+
+    .venv/Scripts/python.exe -m nemo.economics --warehouse artifacts/milestone-7/refunds_only/nemo.duckdb --observations artifacts/milestone-7/refunds_only/observations --max-age 18
+
+The full reproduction commands, including an explicitly assumed-cost control, are
+in the walkthrough. Generated data and private lab assumptions remain outside Git.

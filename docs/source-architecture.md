@@ -84,3 +84,14 @@ it blocks private reads and lab/evaluator imports while running the unchanged de
 Historical cropping precedes warehouse creation. Source/method fingerprints and complete
 prediction seals are verified before the evaluator joins truth. These trusted-code
 guards are not an OS sandbox. See blind-evaluation.md for the exact boundary and limits.
+
+## Milestone 7 economics extension
+economics uses existing canonical dbt order facts plus matching, checksummed supplemental
+order-item, refund and optional order-variable-cost observations. A public economics
+contract declares money/cost scope and the matching coverage cutoff. Missing values
+remain unknown; source assertions do not establish independent financial truth.
+
+lab_economics produces explicitly labelled cost assumptions on the lab side. The
+analytical module does not import it or read its private recipe. Production adapters
+can supply observed costs through the same supported canonical fields. The M1–M6
+analytical modules and frozen detector are unchanged.
