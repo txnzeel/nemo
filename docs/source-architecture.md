@@ -76,3 +76,11 @@ Diagnostic cases preserve metric contracts, source/method hashes, comparison sco
 measurement prerequisites and competing explanations. An observed device payment
 decline is a hypothesis, not a known deployment cause. Incremental profit remains null.
 Read learning-decision-cases.md and milestone-5.md for exact rules and limits.
+
+## Milestone 6 Blind Lab roles
+blind_lab is an evaluation-side module allowed to generate worlds and read private labels.
+blind_worker receives a copied canonical snapshot in a generic temporary workspace;
+it blocks private reads and lab/evaluator imports while running the unchanged detector.
+Historical cropping precedes warehouse creation. Source/method fingerprints and complete
+prediction seals are verified before the evaluator joins truth. These trusted-code
+guards are not an OS sandbox. See blind-evaluation.md for the exact boundary and limits.

@@ -6,7 +6,7 @@ Nexus for Engagement, Measurement & Optimization: an evidence-driven Growth Deci
 Intelligence Platform in development. NEMO's intended output is an auditable Decision
 Case, linking trustworthy observations to evidence, actions, and measured outcomes.
 
-**Current status: Milestone 5 — First Decision Case.** Canonical source contracts,
+**Current status: Milestone 6 — Blind Evaluation Harness.** Canonical source contracts,
 a dbt/DuckDB warehouse and acquisition metrics are implemented alongside the reference
 synthetic producer. Snowflake configuration is prepared but not live-verified.
 Purchase reconciliation and dependency-specific recommendation gating are implemented.
@@ -143,7 +143,7 @@ not a claim that any external connector is operational.
 
 Snowflake is **not live-verified**. Optional adapter dependencies and deployment templates
 exist; no account resources or grants were created. The local warehouse is fully runnable
-without commercial credentials. Next: Milestone 6 after **proceed**.
+without commercial credentials. Next: Milestone 7 after **proceed**.
 
 ## Measurement integrity
 Canonical purchase events reconcile to paid orders under an explicit public contract.
@@ -180,7 +180,7 @@ a causal deployment failure or incremental profit.
 - [Milestone 5 architecture, contracts, tests and limitations](docs/milestone-5.md)
 
 The latest demonstration cases are indexed in artifacts/milestone-5/index.json.
-Stop before Milestone 6 until **proceed**.
+Stop before Milestone 7 until **proceed**.
 
 ## Milestone progress
 This table and the linked reports are updated with each verified milestone.
@@ -193,8 +193,23 @@ This table and the linked reports are updated with each verified milestone.
 | 3 — Warehouse Foundation | Local complete; Snowflake remains unverified | [M3](docs/milestone-3.md) |
 | 4 — Measurement Integrity | Complete | [M4](docs/milestone-4.md) |
 | 5 — First Decision Case | Complete | [M5](docs/milestone-5.md) |
-| 6 — Blind Evaluation Harness | Next; awaiting proceed | Not started |
+| 6 — Blind Evaluation Harness | Complete | [M6](docs/milestone-6.md) |
+| 7 — Customer Economics | Next; awaiting proceed | Not started |
 
-Current validation: 133 tests pass, with Ruff, dbt and package verification.
+Current validation: 148 tests pass, with Ruff, dbt and package verification.
 Generated demonstration data, warehouse files and private lab truth remain local;
 the reports and learning guides include commands to reproduce them.
+
+## Blind Lab and evaluation learning guide
+The M6 harness freezes the detector, seals canonical-only predictions and dbt receipts,
+then scores them against private truth. The verified recipe contains 27 checkpoints
+from three independent worlds: 25/27 diagnoses match, with two early payment misses
+retained and explained. Held-out results are 9/9 on one world, not a production guarantee.
+
+- [Blind Lab architecture, metrics and reproducible commands](docs/blind-evaluation.md)
+- [Learning guide: holdouts, confusion, false positives and detection delay](docs/learning-blind-evaluation.md)
+- [Milestone 6 results and detector limitations](docs/milestone-6.md)
+
+    .venv/Scripts/python.exe -m nemo.blind_lab score --root artifacts/milestone-6 --split held_out
+
+The full prepare/predict/score workflow is documented for a new output directory.
