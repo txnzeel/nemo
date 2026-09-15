@@ -1,0 +1,62 @@
+version: 2
+models:
+  - name: dim_customer
+    description: "One canonical customer/visitor ID; not necessarily a paying customer."
+    columns:
+      - name: customer_id
+        data_tests: [not_null, unique]
+  - name: dim_campaign
+    description: "One campaign ID with explicit canonical channel and paid classification."
+    columns:
+      - name: campaign_id
+        data_tests: [not_null, unique]
+      - name: channel
+        data_tests: [not_null]
+      - name: is_paid
+        data_tests:
+          - accepted_values:
+              arguments: {values: [0, 1], quote: false}
+  - name: fct_ad_performance
+    description: "One date x campaign x device. Incremental by arrival batch, never event date."
+    columns:
+      - name: business_date
+        data_tests: [not_null]
+      - name: device
+        data_tests: [not_null]
+      - name: campaign_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: "ref('dim_campaign')", field: campaign_id}
+      - name: spend_paise
+        data_tests: [not_null]
+  - name: fct_sessions
+    description: "One session with earliest paid-order date; CVR remains report-cutoff dependent."
+    columns:
+      - name: session_id
+        data_tests: [not_null, unique]
+      - name: customer_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: "ref('dim_customer')", field: customer_id}
+      - name: campaign_id
+        data_tests:
+          - relationships:
+              arguments: {to: "ref('dim_campaign')", field: campaign_id}
+  - name: fct_orders
+    description: "One paid order, including source-neutral purchase-session credit and first rank."
+    columns:
+      - name: order_id
+        data_tests: [not_null, unique]
+      - name: session_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments: {to: "ref('fct_sessions')", field: session_id}
+      - name: customer_id
+        data_tests:
+          - relationships:
+              arguments: {to: "ref('dim_customer')", field: customer_id}
+      - name: amount_paise
+        data_tests: [not_null]
