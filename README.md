@@ -6,7 +6,7 @@ Nexus for Engagement, Measurement & Optimization: an evidence-driven Growth Deci
 Intelligence Platform in development. NEMO's intended output is an auditable Decision
 Case, linking trustworthy observations to evidence, actions, and measured outcomes.
 
-**Current status: Milestone 7 — Customer Economics.** Canonical source contracts,
+**Current status: Milestone 8 — Journey Reconstruction.** Canonical source contracts,
 a dbt/DuckDB warehouse and acquisition metrics are implemented alongside the reference
 synthetic producer. Snowflake configuration is prepared but not live-verified.
 Purchase reconciliation and dependency-specific recommendation gating are implemented.
@@ -143,7 +143,7 @@ not a claim that any external connector is operational.
 
 Snowflake is **not live-verified**. Optional adapter dependencies and deployment templates
 exist; no account resources or grants were created. The local warehouse is fully runnable
-without commercial credentials. Next: Milestone 8 after **proceed**.
+without commercial credentials. Next: Milestone 9 after **proceed**.
 
 ## Measurement integrity
 Canonical purchase events reconcile to paid orders under an explicit public contract.
@@ -180,7 +180,7 @@ a causal deployment failure or incremental profit.
 - [Milestone 5 architecture, contracts, tests and limitations](docs/milestone-5.md)
 
 The latest demonstration cases are indexed in artifacts/milestone-5/index.json.
-Stop before Milestone 8 until **proceed**.
+Stop before Milestone 9 until **proceed**.
 
 ## Milestone progress
 This table and the linked reports are updated with each verified milestone.
@@ -195,9 +195,10 @@ This table and the linked reports are updated with each verified milestone.
 | 5 — First Decision Case | Complete | [M5](docs/milestone-5.md) |
 | 6 — Blind Evaluation Harness | Complete | [M6](docs/milestone-6.md) |
 | 7 — Customer Economics | Complete | [M7](docs/milestone-7.md) |
-| 8 — Journey Reconstruction | Next; awaiting proceed | Not started |
+| 8 — Journey Reconstruction | Complete | [M8](docs/milestone-8.md) |
+| 9 — Attribution Lab | Next; awaiting proceed | Not started |
 
-Current validation: 165 tests pass, with Ruff, dbt and package verification.
+Current validation: 176 tests pass, with Ruff, dbt and package verification.
 Generated demonstration data, warehouse files and private lab truth remain local;
 the reports and learning guides include commands to reproduce them.
 
@@ -230,3 +231,19 @@ exercises contribution without presenting it as real company profit.
 
 The full reproduction commands, including an explicitly assumed-cost control, are
 in the walkthrough. Generated data and private lab assumptions remain outside Git.
+
+## Journey reconstruction and learning guide
+M8 reconstructs observed session paths before each paid order, preserving channel,
+campaign and device detail under a versioned lookback contract. Reports include
+touch counts, exact elapsed time, path frequency, prior-channel appearances and
+channel combinations, with history and timestamp-order uncertainty flags.
+Identity uses supplied canonical customer IDs. No attribution or causal credit is assigned.
+
+- [Journey contracts and practical commands](docs/journeys.md)
+- [Learning guide: observed journeys, identity and descriptive assists](docs/learning-journeys.md)
+- [Milestone 8 architecture, results and validation](docs/milestone-8.md)
+
+    .venv/Scripts/python.exe -m nemo.journeys --warehouse artifacts/milestone-8/nemo.duckdb --lookback-days 30
+
+The verified reference has 5,989 paid-order paths, including 592 multi-touch windows.
+Milestone 9 remains pending until **proceed**.
