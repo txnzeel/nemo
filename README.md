@@ -6,12 +6,13 @@ Nexus for Engagement, Measurement & Optimization: an evidence-driven Growth Deci
 Intelligence Platform in development. NEMO's intended output is an auditable Decision
 Case, linking trustworthy observations to evidence, actions, and measured outcomes.
 
-**Current status: Milestone 9 — Attribution Lab.** Canonical source contracts,
+**Current status: Milestone 10 — Experimentation Engine.** Canonical source contracts,
 a dbt/DuckDB warehouse and acquisition metrics are implemented alongside the reference
 synthetic producer. Snowflake configuration is prepared but not live-verified.
 Purchase reconciliation and dependency-specific recommendation gating are implemented.
 Observation-only Decision Cases now propose bounded manual investigations.
-Causal estimates, budget optimization, web UI and AI remain future work.
+Conditional fixed-horizon experiment estimates are implemented; budget optimization,
+production web UI and AI remain future work.
 
 ## Run locally
 
@@ -143,7 +144,7 @@ not a claim that any external connector is operational.
 
 Snowflake is **not live-verified**. Optional adapter dependencies and deployment templates
 exist; no account resources or grants were created. The local warehouse is fully runnable
-without commercial credentials. Next: Milestone 10 after **proceed**.
+without commercial credentials. Next: Milestone 11 after **proceed**.
 
 ## Measurement integrity
 Canonical purchase events reconcile to paid orders under an explicit public contract.
@@ -180,7 +181,7 @@ a causal deployment failure or incremental profit.
 - [Milestone 5 architecture, contracts, tests and limitations](docs/milestone-5.md)
 
 The latest demonstration cases are indexed in artifacts/milestone-5/index.json.
-Stop before Milestone 10 until **proceed**.
+Stop before Milestone 11 until **proceed**.
 
 ## Milestone progress
 This table and the linked reports are updated with each verified milestone.
@@ -197,9 +198,11 @@ This table and the linked reports are updated with each verified milestone.
 | 7 — Customer Economics | Complete | [M7](docs/milestone-7.md) |
 | 8 — Journey Reconstruction | Complete | [M8](docs/milestone-8.md) |
 | 9 — Attribution Lab | Complete | [M9](docs/milestone-9.md) |
-| 10 — Experimentation Engine | Next; awaiting proceed | Not started |
+| 10 — Experimentation Engine | Complete | [M10](docs/milestone-10.md) |
+| 11 — Opportunity Engine | Next; awaiting proceed | Not started |
 
-Current validation: 198 tests pass, with Ruff, dbt and package verification.
+Current validation: 228 tests pass, with Ruff, dbt builds and package verification.
+M10 full freshness flags its empty campaign/ad sources; see the report for details.
 Generated demonstration data, warehouse files and private lab truth remain local;
 the reports and learning guides include commands to reproduce them.
 
@@ -263,4 +266,21 @@ A standalone comparison page highlights channel disagreement and history limitat
     .venv/Scripts/python.exe -m nemo.attribution --warehouse artifacts/milestone-9/nemo.duckdb --output artifacts/milestone-9/new-report.json --html artifacts/milestone-9/new-comparison.html
 
 No causal lift, profit, ROAS or budget recommendation is inferred from attribution.
-Milestone 10 awaits **proceed**.
+Milestone 10 is implemented below.
+
+## Experimentation Engine and learning guide
+M10 adds fixed-horizon customer experiments, saved random assignment, conservative
+sample planning, ITT outcomes and economic guardrails. Nonbuyers stay in denominators.
+Incomplete follow-up, allocation mismatch or missing evidence withholds incremental
+claims. Economic estimates explicitly use capped outcomes, not uncapped profit.
+
+- [Experiment contracts and practical commands](docs/experiments.md)
+- [Learning guide: randomization, uncertainty, guardrails and incrementality](docs/learning-experiments.md)
+- [Milestone 10 results, validation and limits](docs/milestone-10.md)
+
+    .venv/Scripts/python.exe -m nemo.experiments --warehouse artifacts/milestone-10/effect/verified.duckdb --observations artifacts/milestone-10/effect/observations --plan artifacts/milestone-10/effect/plan.json --output-directory artifacts/milestone-10/effect/results
+
+The three synthetic scenarios demonstrate an effect, an inconclusive null and an
+allocation failure. They are not real-company causal evidence. Hashed reports retain
+immutable experiment memory; production assignment delivery remains future integration.
+Milestone 11 awaits **proceed**.
