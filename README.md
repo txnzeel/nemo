@@ -6,7 +6,7 @@ Nexus for Engagement, Measurement & Optimization: an evidence-driven Growth Deci
 Intelligence Platform in development. NEMO's intended output is an auditable Decision
 Case, linking trustworthy observations to evidence, actions, and measured outcomes.
 
-**Current status: Milestone 10 — Experimentation Engine.** Canonical source contracts,
+**Current status: Milestone 11 — Opportunity Engine.** Canonical source contracts,
 a dbt/DuckDB warehouse and acquisition metrics are implemented alongside the reference
 synthetic producer. Snowflake configuration is prepared but not live-verified.
 Purchase reconciliation and dependency-specific recommendation gating are implemented.
@@ -144,7 +144,7 @@ not a claim that any external connector is operational.
 
 Snowflake is **not live-verified**. Optional adapter dependencies and deployment templates
 exist; no account resources or grants were created. The local warehouse is fully runnable
-without commercial credentials. Next: Milestone 11 after **proceed**.
+without commercial credentials. Next: Milestone 12 after **proceed**.
 
 ## Measurement integrity
 Canonical purchase events reconcile to paid orders under an explicit public contract.
@@ -181,7 +181,7 @@ a causal deployment failure or incremental profit.
 - [Milestone 5 architecture, contracts, tests and limitations](docs/milestone-5.md)
 
 The latest demonstration cases are indexed in artifacts/milestone-5/index.json.
-Stop before Milestone 11 until **proceed**.
+Stop before Milestone 12 until **proceed**.
 
 ## Milestone progress
 This table and the linked reports are updated with each verified milestone.
@@ -199,10 +199,11 @@ This table and the linked reports are updated with each verified milestone.
 | 8 — Journey Reconstruction | Complete | [M8](docs/milestone-8.md) |
 | 9 — Attribution Lab | Complete | [M9](docs/milestone-9.md) |
 | 10 — Experimentation Engine | Complete | [M10](docs/milestone-10.md) |
-| 11 — Opportunity Engine | Next; awaiting proceed | Not started |
+| 11 — Opportunity Engine | Complete | [M11](docs/milestone-11.md) |
+| 12 — Decision Ledger | Next; awaiting proceed | Not started |
 
-Current validation: 228 tests pass, with Ruff, dbt builds and package verification.
-M10 full freshness flags its empty campaign/ad sources; see the report for details.
+Current validation: 247 tests pass, with Ruff, dbt builds and package verification.
+M10/M11 experiment demos retain empty campaign/ad-source freshness errors; see their reports.
 Generated demonstration data, warehouse files and private lab truth remain local;
 the reports and learning guides include commands to reproduce them.
 
@@ -283,4 +284,18 @@ claims. Economic estimates explicitly use capped outcomes, not uncapped profit.
 The three synthetic scenarios demonstrate an effect, an inconclusive null and an
 allocation failure. They are not real-company causal evidence. Hashed reports retain
 immutable experiment memory; production assignment delivery remains future integration.
-Milestone 11 awaits **proceed**.
+Milestone 11 is implemented below.
+
+## Opportunity Engine and learning guide
+M11 converts measurement, diagnostic and experiment evidence into bounded review items.
+It preserves upstream blockers, keeps forward value/risk/effort unknown, and distinguishes
+historical experiment effects from future economic opportunity. Healthy controls stay quiet.
+
+- [Opportunity contracts, ranking and practical commands](docs/opportunity-engine.md)
+- [Learning guide: evidence, next steps, unknown value and review priorities](docs/learning-opportunities.md)
+- [Milestone 11 outcomes, validation and limits](docs/milestone-11.md)
+
+    .venv/Scripts/python.exe -m nemo.opportunities --warehouse artifacts/milestone-10/effect/verified.duckdb --observations artifacts/milestone-10/effect/observations --experiment-plan artifacts/milestone-10/effect/plan.json --output-directory artifacts/opportunity-demo/experiment
+
+Proposed means manual review only, not spending, rollout or execution authorization.
+Milestone 12 — Decision Ledger awaits **proceed**.
