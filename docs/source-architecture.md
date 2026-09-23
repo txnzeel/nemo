@@ -95,3 +95,14 @@ lab_economics produces explicitly labelled cost assumptions on the lab side. The
 analytical module does not import it or read its private recipe. Production adapters
 can supply observed costs through the same supported canonical fields. The M1–M6
 analytical modules and frozen detector are unchanged.
+
+## Milestone 13 outcomes and ledger boundary
+Outcome measurement consumes ready canonical warehouse models and matching public
+observations through the existing acquisition metric registry. It binds source identity,
+window, filters and evidence to a versioned decision record. It never reads lab truth,
+generator objects or seeds. The ledger imports immutable opportunity evidence and
+appends human action records, planned targets and descriptive measured outcomes.
+
+Company adapters continue to normalize external data into canonical contracts; they do
+not require changes to target arithmetic or outcome lifecycle logic. An observed target
+comparison and its lesson are not causal evidence or economic action authorization.

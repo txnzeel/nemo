@@ -140,5 +140,7 @@ future work. A privileged file owner can rewrite the entire chain or truncate it
 tail; internal hashes cannot detect every such operation. Backups and external audit
 anchoring are not implemented here. Database and generated records remain outside Git.
 
-M13 will define outcome measurement. M14 will define how prior lessons inform new
-decisions. Neither behavior is simulated by M12 status transitions.
+M13 adds explicit plan_outcome and record_outcome events; see [Outcome Measurement](outcomes.md).
+These append a plan or measurement without reopening action states or rewriting old
+records. Ordinary terminal-state updates remain forbidden. M14 will define how prior
+lessons inform new decisions; outcome recording does not automate that reuse.

@@ -10,6 +10,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 from nemo.experiment_design import digest, encode
+from nemo.outcome_contract import SUPPORTED, business_window, validate_plan, validate_result
 
 TRANSITIONS = {
     "proposed": {"accepted", "rejected", "cancelled"},
@@ -154,6 +155,8 @@ def _apply(states, command, recorded_at):
                 raise ValueError("hypotheses must be a list of human assertions")
             for hypothesis in changes["hypotheses"]:
                 _text(hypothesis)
+        if "measurement_window" in changes and state.get("outcome_plan") is not None:
+            raise ValueError("measurement window is frozen after outcome planning")
         if "measurement_window" in changes:
             window = changes["measurement_window"]
             if not isinstance(window, dict) or set(window) != {"start_inclusive", "end_exclusive"}:
@@ -180,6 +183,34 @@ def _apply(states, command, recorded_at):
                 raise ValueError("acceptance requires owner, expectation and measurement window")
         if target == "implemented" and state["actual_action"] is None:
             raise ValueError("implementation requires a reported actual action")
+        state["version"] += 1
+        state["updated_at"] = recorded_at
+    elif op in {"plan_outcome", "record_outcome"}:
+        payload_key = "plan" if op == "plan_outcome" else "report"
+        if set(command) != common | {"decision_id", "expected_version", payload_key}:
+            raise ValueError("unexpected outcome command fields")
+        state = copy.deepcopy(states[command["decision_id"]])
+        version = command["expected_version"]
+        if type(version) is not int or version != state["version"]:
+            raise ValueError("stale or invalid expected version")
+        if op == "plan_outcome":
+            if state["status"] != "accepted":
+                raise ValueError("outcome planning requires accepted work that has not started")
+            plan = validate_plan(command["plan"])
+            business_window(state["measurement_window"])
+            state["outcome_plan"] = {
+                "spec": copy.deepcopy(plan),
+                "recorded_at": recorded_at,
+                "metric_definition": json.loads(encode(SUPPORTED[plan["metric"]].definition())),
+            }
+        else:
+            if state["status"] != "implemented":
+                raise ValueError("outcomes can only be recorded for implemented decisions")
+            result = command["report"]
+            validate_result(state, result, recorded_at)
+            state["outcome_report"] = copy.deepcopy(result)
+            for key in ("actual_outcome", "difference_from_expectation", "lesson"):
+                state[key] = copy.deepcopy(result[key])
         state["version"] += 1
         state["updated_at"] = recorded_at
     else:

@@ -6,7 +6,7 @@ Nexus for Engagement, Measurement & Optimization: an evidence-driven Growth Deci
 Intelligence Platform in development. NEMO's intended output is an auditable Decision
 Case, linking trustworthy observations to evidence, actions, and measured outcomes.
 
-**Current status: Milestone 12 — Decision Ledger.** Canonical source contracts,
+**Current status: Milestone 13 — Outcome Measurement.** Canonical source contracts,
 a dbt/DuckDB warehouse and acquisition metrics are implemented alongside the reference
 synthetic producer. Snowflake configuration is prepared but not live-verified.
 Purchase reconciliation and dependency-specific recommendation gating are implemented.
@@ -201,9 +201,12 @@ This table and the linked reports are updated with each verified milestone.
 | 10 — Experimentation Engine | Complete | [M10](docs/milestone-10.md) |
 | 11 — Opportunity Engine | Complete | [M11](docs/milestone-11.md) |
 | 12 — Decision Ledger | Complete | [M12](docs/milestone-12.md) |
-| 13 — Outcome Measurement | Next; awaiting proceed | Not started |
+| 13 — Outcome Measurement | Complete; verified in Ubuntu WSL | [M13](docs/milestone-13.md) |
+| 14 — Decision Memory | Next; awaiting proceed | Not started |
 
-Current validation: 270 tests pass, with Ruff, dbt builds and package verification.
+Current validation: 314 tests pass in Ubuntu WSL, with Ruff, dbt builds and package verification.
+Windows Smart App Control currently blocks the Windows DuckDB extension; security settings
+remain unchanged. M13 documents the Linux validation and frozen M6 runtime limitation.
 M10/M11 experiment demos retain empty campaign/ad-source freshness errors; see their reports.
 Generated demonstration data, warehouse files and private lab truth remain local;
 the reports and learning guides include commands to reproduce them.
@@ -313,4 +316,18 @@ stale updates and conflicting retries fail. Measured outcomes and lessons remain
     .venv/Scripts/python.exe -m nemo.ledger --database artifacts/milestone-12/decisions.sqlite read
 
 Records reflect human assertions; no external action execution or authenticated approval
-service is implemented. Milestone 13 — Outcome Measurement awaits **proceed**.
+service is implemented. Milestone 13 is implemented below.
+
+## Outcome Measurement and learning guide
+M13 compares declared targets with observed canonical metrics after an implemented
+decision's window. Plans freeze before work starts; exact differences and bounded
+lessons append to the ledger. Missing plans, incomplete windows and undefined ratios
+remain unresolved. Observed target attainment is not a causal effect.
+
+- [Outcome contracts and practical commands](docs/outcomes.md)
+- [Learning guide: targets, observation windows, exact differences and lessons](docs/learning-outcomes.md)
+- [Milestone 13 results, validation and environment limitations](docs/milestone-13.md)
+
+Supported metrics are sessions, paid orders, merchandise receipts and session conversion.
+The complete validation ran in approved Ubuntu WSL using Python 3.12.13 and the lockfile.
+Milestone 14 — Decision Memory awaits **proceed**.
