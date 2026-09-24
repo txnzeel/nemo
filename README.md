@@ -6,7 +6,7 @@ Nexus for Engagement, Measurement & Optimization: an evidence-driven Growth Deci
 Intelligence Platform in development. NEMO's intended output is an auditable Decision
 Case, linking trustworthy observations to evidence, actions, and measured outcomes.
 
-**Current status: Milestone 15 — Search Intelligence.** Canonical source contracts,
+**Current status: Milestone 16 — Retention / Expansion.** Canonical source contracts,
 a dbt/DuckDB warehouse and acquisition metrics are implemented alongside the reference
 synthetic producer. Snowflake configuration is prepared but not live-verified.
 Purchase reconciliation and dependency-specific recommendation gating are implemented.
@@ -204,9 +204,10 @@ This table and the linked reports are updated with each verified milestone.
 | 13 — Outcome Measurement | Complete; verified in Ubuntu WSL | [M13](docs/milestone-13.md) |
 | 14 — Decision Memory | Complete; verified in Ubuntu WSL | [M14](docs/milestone-14.md) |
 | 15 — Search Intelligence | Complete; verified in Ubuntu WSL | [M15](docs/milestone-15.md) |
-| 16 — Retention / Expansion | Next in authorized release work | Planned |
+| 16 — Retention / Expansion | Complete; verified in Ubuntu WSL | [M16](docs/milestone-16.md) |
+| 17 — Forecasting / Scenario Lab | Next in authorized release work | Planned |
 
-Current validation: 343 tests pass in Ubuntu WSL, with Ruff, dbt builds and package verification.
+Current validation: 359 tests pass in Ubuntu WSL, with Ruff, dbt builds and package verification.
 Windows Smart App Control currently blocks the Windows DuckDB extension; security settings
 remain unchanged. M14 documents the Linux validation and frozen M6 runtime limitation.
 M10/M11 experiment demos retain empty campaign/ad-source freshness errors; see their reports.
@@ -357,4 +358,15 @@ No live connector or causal cannibalization claim is made.
 - [M15 validation and limitations](docs/milestone-15.md)
 - [Authorized remaining release work](docs/release-progress.md)
 
-M16 — Retention / Expansion follows under authorization for all remaining milestones.
+M16 is implemented below.
+
+## Retention / Expansion
+Observed customer states and transitions support retention/reactivation investigations.
+Fully followed product sequences support cross-sell experiment review. Confirmed churn,
+forward value at risk and economic ranking remain unknown without supporting evidence.
+
+- [State and sequence contracts](docs/retention.md)
+- [Learning guide](docs/learning-retention.md)
+- [M16 validation and limitations](docs/milestone-16.md)
+
+M17 — Forecasting / Scenario Lab follows under authorization for all remaining milestones.
