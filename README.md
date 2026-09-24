@@ -6,7 +6,7 @@ Nexus for Engagement, Measurement & Optimization: an evidence-driven Growth Deci
 Intelligence Platform in development. NEMO's intended output is an auditable Decision
 Case, linking trustworthy observations to evidence, actions, and measured outcomes.
 
-**Current status: Milestone 13 — Outcome Measurement.** Canonical source contracts,
+**Current status: Milestone 14 — Decision Memory.** Canonical source contracts,
 a dbt/DuckDB warehouse and acquisition metrics are implemented alongside the reference
 synthetic producer. Snowflake configuration is prepared but not live-verified.
 Purchase reconciliation and dependency-specific recommendation gating are implemented.
@@ -202,11 +202,12 @@ This table and the linked reports are updated with each verified milestone.
 | 11 — Opportunity Engine | Complete | [M11](docs/milestone-11.md) |
 | 12 — Decision Ledger | Complete | [M12](docs/milestone-12.md) |
 | 13 — Outcome Measurement | Complete; verified in Ubuntu WSL | [M13](docs/milestone-13.md) |
-| 14 — Decision Memory | Next; awaiting proceed | Not started |
+| 14 — Decision Memory | Complete; verified in Ubuntu WSL | [M14](docs/milestone-14.md) |
+| 15 — Search Intelligence | Next; awaiting proceed | Not started |
 
-Current validation: 314 tests pass in Ubuntu WSL, with Ruff, dbt builds and package verification.
+Current validation: 327 tests pass in Ubuntu WSL, with Ruff, dbt builds and package verification.
 Windows Smart App Control currently blocks the Windows DuckDB extension; security settings
-remain unchanged. M13 documents the Linux validation and frozen M6 runtime limitation.
+remain unchanged. M14 documents the Linux validation and frozen M6 runtime limitation.
 M10/M11 experiment demos retain empty campaign/ad-source freshness errors; see their reports.
 Generated demonstration data, warehouse files and private lab truth remain local;
 the reports and learning guides include commands to reproduce them.
@@ -330,4 +331,17 @@ remain unresolved. Observed target attainment is not a causal effect.
 
 Supported metrics are sessions, paid orders, merchandise receipts and session conversion.
 The complete validation ran in approved Ubuntu WSL using Python 3.12.13 and the lockfile.
-Milestone 14 — Decision Memory awaits **proceed**.
+Milestone 14 is implemented below.
+
+## Decision Memory and learning guide
+M14 retrieves compatible prior outcomes and lessons beside a new conversion Decision
+Case. Explicit knowledge cutoffs and audit references preserve what was known;
+incompatible populations and overlapping windows are excluded. Historical results
+prompt review questions without changing the current diagnosis or evidence gates.
+
+- [Memory contracts and practical commands](docs/decision-memory.md)
+- [Learning guide: retrieval, cutoffs, scope and evidence limits](docs/learning-decision-memory.md)
+- [Milestone 14 results and validation limitations](docs/milestone-14.md)
+
+A manually authored canonical fixture demonstrates retrieval without generator state.
+Milestone 15 — Search Intelligence awaits **proceed**.
