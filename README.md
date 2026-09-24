@@ -6,7 +6,7 @@ Nexus for Engagement, Measurement & Optimization: an evidence-driven Growth Deci
 Intelligence Platform in development. NEMO's intended output is an auditable Decision
 Case, linking trustworthy observations to evidence, actions, and measured outcomes.
 
-**Current status: Milestone 14 — Decision Memory.** Canonical source contracts,
+**Current status: Milestone 15 — Search Intelligence.** Canonical source contracts,
 a dbt/DuckDB warehouse and acquisition metrics are implemented alongside the reference
 synthetic producer. Snowflake configuration is prepared but not live-verified.
 Purchase reconciliation and dependency-specific recommendation gating are implemented.
@@ -203,9 +203,10 @@ This table and the linked reports are updated with each verified milestone.
 | 12 — Decision Ledger | Complete | [M12](docs/milestone-12.md) |
 | 13 — Outcome Measurement | Complete; verified in Ubuntu WSL | [M13](docs/milestone-13.md) |
 | 14 — Decision Memory | Complete; verified in Ubuntu WSL | [M14](docs/milestone-14.md) |
-| 15 — Search Intelligence | Next; awaiting proceed | Not started |
+| 15 — Search Intelligence | Complete; verified in Ubuntu WSL | [M15](docs/milestone-15.md) |
+| 16 — Retention / Expansion | Next in authorized release work | Planned |
 
-Current validation: 327 tests pass in Ubuntu WSL, with Ruff, dbt builds and package verification.
+Current validation: 343 tests pass in Ubuntu WSL, with Ruff, dbt builds and package verification.
 Windows Smart App Control currently blocks the Windows DuckDB extension; security settings
 remain unchanged. M14 documents the Linux validation and frozen M6 runtime limitation.
 M10/M11 experiment demos retain empty campaign/ad-source freshness errors; see their reports.
@@ -344,4 +345,16 @@ prompt review questions without changing the current diagnosis or evidence gates
 - [Milestone 14 results and validation limitations](docs/milestone-14.md)
 
 A manually authored canonical fixture demonstrates retrieval without generator state.
-Milestone 15 — Search Intelligence awaits **proceed**.
+Milestone 15 is implemented below.
+
+## Search Intelligence
+Canonical paid/organic query observations produce exact CTR/CPC and weighted rank,
+with review flags for expensive queries, organic visibility and overlap hypotheses.
+No live connector or causal cannibalization claim is made.
+
+- [Search contract and commands](docs/search-intelligence.md)
+- [Learning guide](docs/learning-search.md)
+- [M15 validation and limitations](docs/milestone-15.md)
+- [Authorized remaining release work](docs/release-progress.md)
+
+M16 — Retention / Expansion follows under authorization for all remaining milestones.

@@ -106,3 +106,10 @@ appends human action records, planned targets and descriptive measured outcomes.
 Company adapters continue to normalize external data into canonical contracts; they do
 not require changes to target arithmetic or outcome lifecycle logic. An observed target
 comparison and its lesson are not causal evidence or economic action authorization.
+
+## Milestone 15 search extension
+The optional checksummed search_performance supplement aggregates paid and organic
+observations at date/surface/query/device grain. Its public search_contract declares
+source scope, conversion semantics, query coverage and brand classification.
+Vendor extraction maps into this contract; downstream review logic has no vendor SDK
+or synthetic dependency. Source-reported conversions remain separate from paid orders.
