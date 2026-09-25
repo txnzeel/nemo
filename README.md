@@ -6,7 +6,7 @@ Nexus for Engagement, Measurement & Optimization: an evidence-driven Growth Deci
 Intelligence Platform in development. NEMO's intended output is an auditable Decision
 Case, linking trustworthy observations to evidence, actions, and measured outcomes.
 
-**Current status: Milestone 18 — Response Curves.** Canonical source contracts,
+**Current status: Milestone 19 — Budget Studio.** Canonical source contracts,
 a dbt/DuckDB warehouse and acquisition metrics are implemented alongside the reference
 synthetic producer. Snowflake configuration is prepared but not live-verified.
 Purchase reconciliation and dependency-specific recommendation gating are implemented.
@@ -207,9 +207,10 @@ This table and the linked reports are updated with each verified milestone.
 | 16 — Retention / Expansion | Complete; verified in Ubuntu WSL | [M16](docs/milestone-16.md) |
 | 17 — Forecasting / Scenario Lab | Complete; verified in Ubuntu WSL | [M17](docs/milestone-17.md) |
 | 18 — Response Curves | Complete; verified in Ubuntu WSL | [M18](docs/milestone-18.md) |
-| 19 — Budget Studio | Next in authorized release work | Planned |
+| 19 — Budget Studio | Complete; verified in Ubuntu WSL | [M19](docs/milestone-19.md) |
+| 20 — MMM | Next; conditional on data and methodology | Readiness assessment planned |
 
-Current validation: 386 tests pass in Ubuntu WSL, with Ruff, dbt builds and package verification.
+Current validation: 398 tests pass in Ubuntu WSL, with Ruff, dbt builds and package verification.
 Windows Smart App Control currently blocks the Windows DuckDB extension; security settings
 remain unchanged. M14 documents the Linux validation and frozen M6 runtime limitation.
 M10/M11 experiment demos retain empty campaign/ad-source freshness errors; see their reports.
@@ -393,4 +394,15 @@ error bands support scenarios inside the observed spend range; causal effects re
 - [Learning guide](docs/learning-response-curves.md)
 - [M18 validation and limitations](docs/milestone-18.md)
 
-M19 — Budget Studio follows under authorization for all remaining milestones.
+M19 is implemented below.
+
+## Budget Studio
+A verified allocation service enforces weekly budget, channel/share/change constraints
+and experiment reserve on a fixed spend grid. It exposes model estimates, binding bounds
+and sensitivity. The observational optimum remains a conditional review scenario.
+
+- [Allocation contract and commands](docs/budget-studio.md)
+- [Learning guide](docs/learning-budget-studio.md)
+- [M19 validation and limitations](docs/milestone-19.md)
+
+M20 — MMM readiness is next; fitting remains conditional on justified data and methods.
