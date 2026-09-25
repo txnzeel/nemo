@@ -6,7 +6,7 @@ Nexus for Engagement, Measurement & Optimization: an evidence-driven Growth Deci
 Intelligence Platform in development. NEMO's intended output is an auditable Decision
 Case, linking trustworthy observations to evidence, actions, and measured outcomes.
 
-**Current status: Milestone 19 — Budget Studio.** Canonical source contracts,
+**Current status: through Milestone 19; M20 MMM fitting deferred after readiness review.** Canonical source contracts,
 a dbt/DuckDB warehouse and acquisition metrics are implemented alongside the reference
 synthetic producer. Snowflake configuration is prepared but not live-verified.
 Purchase reconciliation and dependency-specific recommendation gating are implemented.
@@ -208,7 +208,8 @@ This table and the linked reports are updated with each verified milestone.
 | 17 — Forecasting / Scenario Lab | Complete; verified in Ubuntu WSL | [M17](docs/milestone-17.md) |
 | 18 — Response Curves | Complete; verified in Ubuntu WSL | [M18](docs/milestone-18.md) |
 | 19 — Budget Studio | Complete; verified in Ubuntu WSL | [M19](docs/milestone-19.md) |
-| 20 — MMM | Next; conditional on data and methodology | Readiness assessment planned |
+| 20 — MMM | Readiness reviewed; fitting deferred | [M20](docs/milestone-20.md) |
+| 21 — API Product Layer | Next in authorized release work | Planned |
 
 Current validation: 398 tests pass in Ubuntu WSL, with Ruff, dbt builds and package verification.
 Windows Smart App Control currently blocks the Windows DuckDB extension; security settings
@@ -405,4 +406,13 @@ and sensitivity. The observational optimum remains a conditional review scenario
 - [Learning guide](docs/learning-budget-studio.md)
 - [M19 validation and limitations](docs/milestone-19.md)
 
-M20 — MMM readiness is next; fitting remains conditional on justified data and methods.
+## MMM readiness
+M20's conditional review defers fitting: constructed response fixtures and existing
+software infrastructure do not identify company media effects. No MMM feature or
+causal ROI output is claimed.
+
+- [Readiness decision and reopening criteria](docs/mmm-readiness.md)
+- [Learning guide](docs/learning-mmm.md)
+- [M20 assessment and validation scope](docs/milestone-20.md)
+
+M21 — API Product Layer follows under authorization for all remaining milestones.

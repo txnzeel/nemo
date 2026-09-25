@@ -11,7 +11,7 @@ claim live external verification without the corresponding service evidence.
 | 17 Forecasting / Scenario Lab | Naive benchmarks, backtests, intervals, explicit assumptions | Complete: 373 tests, dbt and package verified |
 | 18 Response Curves | Diminishing returns, data sufficiency and uncertainty | Complete: 386 tests, dbt and package verified |
 | 19 Budget Studio | Constrained allocation, sensitivity and evidence gates | Complete: 398 tests, dbt and package verified |
-| 20 MMM | Method/data readiness assessment; fitting only if justified | Conditional |
+| 20 MMM | Method/data readiness assessment; fitting only if justified | Reviewed; fitting deferred, not implemented |
 | 21 API | Validated FastAPI contracts around existing analyses | Planned |
 | 22 Web | Functional Next.js Decision Case experience | Planned |
 | 23 Analyst | Grounded explanations with evidence references | Planned |
