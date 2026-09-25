@@ -6,7 +6,7 @@ Nexus for Engagement, Measurement & Optimization: an evidence-driven Growth Deci
 Intelligence Platform in development. NEMO's intended output is an auditable Decision
 Case, linking trustworthy observations to evidence, actions, and measured outcomes.
 
-**Current status: Milestone 16 — Retention / Expansion.** Canonical source contracts,
+**Current status: Milestone 17 — Forecasting / Scenario Lab.** Canonical source contracts,
 a dbt/DuckDB warehouse and acquisition metrics are implemented alongside the reference
 synthetic producer. Snowflake configuration is prepared but not live-verified.
 Purchase reconciliation and dependency-specific recommendation gating are implemented.
@@ -205,9 +205,10 @@ This table and the linked reports are updated with each verified milestone.
 | 14 — Decision Memory | Complete; verified in Ubuntu WSL | [M14](docs/milestone-14.md) |
 | 15 — Search Intelligence | Complete; verified in Ubuntu WSL | [M15](docs/milestone-15.md) |
 | 16 — Retention / Expansion | Complete; verified in Ubuntu WSL | [M16](docs/milestone-16.md) |
-| 17 — Forecasting / Scenario Lab | Next in authorized release work | Planned |
+| 17 — Forecasting / Scenario Lab | Complete; verified in Ubuntu WSL | [M17](docs/milestone-17.md) |
+| 18 — Response Curves | Next in authorized release work | Planned |
 
-Current validation: 359 tests pass in Ubuntu WSL, with Ruff, dbt builds and package verification.
+Current validation: 373 tests pass in Ubuntu WSL, with Ruff, dbt builds and package verification.
 Windows Smart App Control currently blocks the Windows DuckDB extension; security settings
 remain unchanged. M14 documents the Linux validation and frozen M6 runtime limitation.
 M10/M11 experiment demos retain empty campaign/ad-source freshness errors; see their reports.
@@ -369,4 +370,15 @@ forward value at risk and economic ranking remain unknown without supporting evi
 - [Learning guide](docs/learning-retention.md)
 - [M16 validation and limitations](docs/milestone-16.md)
 
-M17 — Forecasting / Scenario Lab follows under authorization for all remaining milestones.
+M17 is implemented below.
+
+## Forecasting / Scenario Lab
+Chronological naive forecasts expose baseline comparisons, audit errors and empirical
+error bands. Conditional spend/CPC/conversion scenarios preserve exact arithmetic and
+explicit assumptions. Neither establishes causal uplift or profit.
+
+- [Forecast and scenario contracts](docs/forecasting.md)
+- [Learning guide](docs/learning-forecasting.md)
+- [M17 validation and limitations](docs/milestone-17.md)
+
+M18 — Response Curves follows under authorization for all remaining milestones.
