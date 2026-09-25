@@ -9,7 +9,7 @@ claim live external verification without the corresponding service evidence.
 | 15 Search Intelligence | Canonical paid/organic metrics and bounded review | Complete: 343 tests, dbt and package verified |
 | 16 Retention / Expansion | Explicit states, temporal sequences, review cases | Complete: 359 tests, dbt and package verified |
 | 17 Forecasting / Scenario Lab | Naive benchmarks, backtests, intervals, explicit assumptions | Complete: 373 tests, dbt and package verified |
-| 18 Response Curves | Diminishing returns, data sufficiency and uncertainty | Planned |
+| 18 Response Curves | Diminishing returns, data sufficiency and uncertainty | Complete: 386 tests, dbt and package verified |
 | 19 Budget Studio | Constrained allocation, sensitivity and evidence gates | Planned |
 | 20 MMM | Method/data readiness assessment; fitting only if justified | Conditional |
 | 21 API | Validated FastAPI contracts around existing analyses | Planned |
