@@ -113,3 +113,15 @@ observations at date/surface/query/device grain. Its public search_contract decl
 source scope, conversion semantics, query coverage and brand classification.
 Vendor extraction maps into this contract; downstream review logic has no vendor SDK
 or synthetic dependency. Source-reported conversions remain separate from paid orders.
+
+## Milestone 21 API boundary
+The optional FastAPI transport selects operator-configured canonical datasets and calls
+existing services. It does not import generators, seeds, simulation settings or private
+truth. A manual fixture exercises direct-service/HTTP parity and real loopback delivery.
+External adapters normalize observations and build the same warehouse before the
+operator registers their paths; transport and analytical logic stay unchanged.
+
+Catalog origin labels are assertions, not provenance certification. The local API
+preserves descriptive, diagnostic, experimental and conditional evidence distinctions
+already present in service outputs. See [API contracts](api.md) for authorization,
+exact-money client requirements and deployment limitations.

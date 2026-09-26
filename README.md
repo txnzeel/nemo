@@ -415,4 +415,13 @@ causal ROI output is claimed.
 - [Learning guide](docs/learning-mmm.md)
 - [M20 assessment and validation scope](docs/milestone-20.md)
 
-M21 — API Product Layer follows under authorization for all remaining milestones.
+## API Product Layer
+M21 exposes existing analyses and controlled ledger updates through authenticated
+FastAPI routes. Configured dataset IDs preserve canonical source boundaries; exact
+money, analytical evidence levels and ledger concurrency rules remain unchanged.
+
+- [API contracts and local startup](docs/api.md)
+- [Learning guide](docs/learning-api.md)
+- [M21 results and limitations](docs/milestone-21.md)
+
+M22 — Next.js Web Product is next. See the [release status](docs/release-progress.md).
