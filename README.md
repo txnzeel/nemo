@@ -424,4 +424,13 @@ money, analytical evidence levels and ledger concurrency rules remain unchanged.
 - [Learning guide](docs/learning-api.md)
 - [M21 results and limitations](docs/milestone-21.md)
 
-M22 — Next.js Web Product is next. See the [release status](docs/release-progress.md).
+## Web Product
+The Next.js workspace puts Decision Cases, evidence boundaries and the next investigation
+at the center. Source selection, measurement review, opportunities and the read-only ledger
+use existing analytical contracts. A labelled public lab preview requires no credentials.
+
+- [Startup and local modes](web/README.md)
+- [Web learning guide](docs/learning-web.md)
+- [M22 validation and remaining authenticated-browser check](docs/milestone-22.md)
+
+See the [release status](docs/release-progress.md) for the remaining authorized work.

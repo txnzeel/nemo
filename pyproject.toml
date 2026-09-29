@@ -27,6 +27,9 @@ snowflake = [
 [dependency-groups]
 dev = ["pytest>=8,<10", "ruff>=0.11,<1"]
 
+[tool.hatch.build.targets.sdist]
+only-include = ["src", "tests", "docs", "README.md", "pyproject.toml", "uv.lock"]
+
 [tool.hatch.build.targets.wheel]
 packages = ["src/nemo"]
 

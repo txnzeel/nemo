@@ -1,7 +1,7 @@
 # Remaining release work
 
-The current repository workflow completes and publishes one milestone per proceed.
-Earlier batch authorization is superseded by the latest AGENTS.md instructions.
+The user explicitly authorized the remaining milestones on 2026-09-26.
+Complete and publish each separately; continue this authorized batch through M27.
 Do not claim live external verification without the corresponding service evidence.
 
 | Milestone | Acceptance focus | Status |
@@ -13,7 +13,7 @@ Do not claim live external verification without the corresponding service eviden
 | 19 Budget Studio | Constrained allocation, sensitivity and evidence gates | Complete: 398 tests, dbt and package verified |
 | 20 MMM | Method/data readiness assessment; fitting only if justified | Reviewed; fitting deferred, not implemented |
 | 21 API | Validated FastAPI contracts around existing analyses | Complete: 421 full-suite + 24 focused API checks; dbt/HTTP/package verified |
-| 22 Web | Functional Next.js Decision Case experience | Planned |
+| 22 Web | Functional Next.js Decision Case experience | Implemented; 422 Python/4 Node tests and lab browser verified; authenticated browser pending |
 | 23 Analyst | Grounded explanations with evidence references | Planned |
 | 24 Google | Real Ads/GA4/Search Console adapters and separate live verification | Credentials dependent |
 | 25 Orchestration | Airflow jobs, retries, timeouts, idempotency, failure propagation | Planned |
