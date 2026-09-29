@@ -89,6 +89,7 @@ def test_case_and_canonical_metric_parity(client, data):
     "route",
     [
         "opportunities",
+        "analyst",
         "experiments",
         "customers",
         "journeys",

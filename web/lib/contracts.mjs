@@ -43,6 +43,7 @@ export function percent(ratio) {
 }
 export const routes = new Set([
   "decision-case",
+  "analyst",
   "opportunities",
   "decisions",
   "measurement-health",

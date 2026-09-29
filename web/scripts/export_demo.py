@@ -4,6 +4,7 @@ import json
 from datetime import date
 from pathlib import Path
 
+from nemo.analyst import explain
 from nemo.decision_case import build_case
 from nemo.integrity import assess
 from nemo.opportunities import report
@@ -26,6 +27,7 @@ for kind, label in [
     assert case["scope"]["mode"] == "synthetic", "Only lab evidence may be exported"
     values = {
         "decision-case": case,
+        "analyst": explain(case),
         "measurement-health": assess(source / "observations"),
         "opportunities": report(
             source / "nemo.duckdb",

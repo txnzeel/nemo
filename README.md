@@ -433,4 +433,14 @@ use existing analytical contracts. A labelled public lab preview requires no cre
 - [Web learning guide](docs/learning-web.md)
 - [M22 validation and remaining authenticated-browser check](docs/milestone-22.md)
 
-See the [release status](docs/release-progress.md) for the remaining authorized work.
+## Grounded Evidence Analyst
+M23 presents cited explanations of existing Decision Cases. The default API/web mode
+is deterministic and clearly labelled; optional AI can select approved statements only.
+Exact money, measurement caveats and causal boundaries remain controlled by code.
+
+- [Analyst contract and commands](docs/analyst.md)
+- [Learning guide](docs/learning-analyst.md)
+- [M23 validation and live-provider limitations](docs/milestone-23.md)
+
+See the [release status](docs/release-progress.md) for the remaining work.
+Each next milestone starts after a new proceed request.

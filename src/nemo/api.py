@@ -19,6 +19,7 @@ from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from pydantic import BaseModel, ConfigDict, Field, StrictInt
 
 from nemo import (
+    analyst,
     attribution,
     budget_studio,
     economics,
@@ -344,6 +345,14 @@ def create_app(root, datasets, *, read_token, write_token=None):
     def decision_case(dataset_id: str):
         row = dataset(dataset_id)
         return build_case(resource(row, "warehouse"), resource(row, "observations"), **dates(row))
+
+    @app.get("/datasets/{dataset_id}/analyst", dependencies=[Depends(role)])
+    def explain_case(
+        dataset_id: str, focus: Literal["summary", "measurement", "next_step"] = "summary"
+    ):
+        row = dataset(dataset_id)
+        case = build_case(resource(row, "warehouse"), resource(row, "observations"), **dates(row))
+        return analyst.explain(case, focus=focus)
 
     @app.get("/datasets/{dataset_id}/opportunities", dependencies=[Depends(role)])
     def opportunity_board(dataset_id: str):

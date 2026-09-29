@@ -1,7 +1,7 @@
 # Remaining release work
 
-The user explicitly authorized the remaining milestones on 2026-09-26.
-Complete and publish each separately; continue this authorized batch through M27.
+The latest repository instructions require one milestone per proceed request.
+Complete and publish the current milestone, then stop until the next proceed.
 Do not claim live external verification without the corresponding service evidence.
 
 | Milestone | Acceptance focus | Status |
@@ -14,7 +14,7 @@ Do not claim live external verification without the corresponding service eviden
 | 20 MMM | Method/data readiness assessment; fitting only if justified | Reviewed; fitting deferred, not implemented |
 | 21 API | Validated FastAPI contracts around existing analyses | Complete: 421 full-suite + 24 focused API checks; dbt/HTTP/package verified |
 | 22 Web | Functional Next.js Decision Case experience | Implemented; 422 Python/4 Node tests and lab browser verified; authenticated browser pending |
-| 23 Analyst | Grounded explanations with evidence references | Planned |
+| 23 Analyst | Grounded explanations with evidence references | Implemented: 443 Python/4 Node tests, package and lab browser verified; live model pending |
 | 24 Google | Real Ads/GA4/Search Console adapters and separate live verification | Credentials dependent |
 | 25 Orchestration | Airflow jobs, retries, timeouts, idempotency, failure propagation | Planned |
 | 26 Reliability / Security | Measured performance and hardening | Planned |

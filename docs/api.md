@@ -59,6 +59,7 @@ GET /openapi.json provides the actual request schemas; interactive docs are disa
 | GET /datasets/{id}/measurement-health | Canonical measurement trust |
 | GET /datasets/{id}/acquisition | Metrics with start/end and one grouping |
 | GET /datasets/{id}/decision-case | Configured conversion comparison |
+| GET /datasets/{id}/analyst | M23 cited explanation; summary/measurement/next_step focus, no model call |
 | GET /datasets/{id}/opportunities | Existing evidence-gated review board |
 | GET /datasets/{id}/experiments | Existing configured experiment analysis |
 | GET /datasets/{id}/customers | Customer economics, bounded cohort age |

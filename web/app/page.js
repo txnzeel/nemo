@@ -96,6 +96,7 @@ export default function Home() {
           {[
             ["decision-case", "◎", "Decision Case"],
             ["opportunities", "↗", "Opportunities"],
+            ["analyst", "◇", "Evidence Analyst"],
             ["measurement-health", "◈", "Measurement"],
             ["decisions", "▤", "Decision ledger"],
           ].map(([id, icon, label]) => (
@@ -429,6 +430,35 @@ export default function Home() {
               </div>
             )}
             <JsonDetail title="Auditable ledger events" value={data.events} />
+          </section>
+        )}
+        {data && view === "analyst" && (
+          <section className="panel">
+            <div className="panel-heading">
+              <h2>Grounded evidence explanation</h2>
+              <span className="pill">Deterministic · no model call</span>
+            </div>
+            <p>
+              Statements come from the validated Decision Case. This view
+              performs no new analysis.
+            </p>
+            <ul className="evidence-list">
+              {data.statements.map((s) => (
+                <li key={s.evidence_id}>
+                  <div>
+                    <strong>{s.text}</strong>
+                    <br />
+                    <small>
+                      Evidence: {s.evidence_id} · {s.source_pointer}
+                    </small>
+                  </div>
+                </li>
+              ))}
+            </ul>
+            <JsonDetail
+              title="Case revision, citations and limitations"
+              value={data}
+            />
           </section>
         )}
         <footer>
