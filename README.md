@@ -6,8 +6,9 @@ Nexus for Engagement, Measurement & Optimization: an evidence-driven Growth Deci
 Intelligence Platform in development. NEMO's intended output is an auditable Decision
 Case, linking trustworthy observations to evidence, actions, and measured outcomes.
 
-**Current status: M1–M23 implemented; M24 read-only Google extraction added with
-live verification pending. M20 MMM fitting is deferred.**
+**Current status: implemented through M25, with M20 MMM fitting deferred.**
+Google extraction remains staged and live verification is pending; Airflow is locally
+verified with production scheduling disabled.
 Canonical contracts, dbt/DuckDB, evidence-gated analytics, a local FastAPI service,
 Next.js workspace and grounded explanations are implemented. Lab fixtures prove local
 behavior; external account verification and production deployment are separate gates.
@@ -452,3 +453,13 @@ aggregate reports are not automatically activated as canonical event/order data.
 - [Setup, contracts and verification gates](docs/google-integrations.md)
 - [Learning guide](docs/learning-google.md)
 - [M24 report](docs/milestone-24.md)
+
+## Pipeline orchestration
+An atomic canonical pipeline publishes checksummed report revisions. The isolated
+Airflow DAG runs publication and independent verification with retries and timeouts.
+No generator or external credentials are required. Production scheduling is disabled
+until arrival, window, alerting and recovery policies are configured.
+
+- [Core runner and Airflow operations](docs/orchestration.md)
+- [Learning guide](docs/learning-orchestration.md)
+- [M25 report](docs/milestone-25.md)
