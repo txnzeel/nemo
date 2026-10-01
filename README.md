@@ -6,13 +6,12 @@ Nexus for Engagement, Measurement & Optimization: an evidence-driven Growth Deci
 Intelligence Platform in development. NEMO's intended output is an auditable Decision
 Case, linking trustworthy observations to evidence, actions, and measured outcomes.
 
-**Current status: through Milestone 19; M20 MMM fitting deferred after readiness review.** Canonical source contracts,
-a dbt/DuckDB warehouse and acquisition metrics are implemented alongside the reference
-synthetic producer. Snowflake configuration is prepared but not live-verified.
-Purchase reconciliation and dependency-specific recommendation gating are implemented.
-Observation-only Decision Cases now propose bounded manual investigations.
-Conditional fixed-horizon experiment estimates are implemented; budget optimization,
-production web UI and AI remain future work.
+**Current status: M1–M23 implemented; M24 read-only Google extraction added with
+live verification pending. M20 MMM fitting is deferred.**
+Canonical contracts, dbt/DuckDB, evidence-gated analytics, a local FastAPI service,
+Next.js workspace and grounded explanations are implemented. Lab fixtures prove local
+behavior; external account verification and production deployment are separate gates.
+See [release status](docs/release-progress.md) for exact acceptance and limitations.
 
 ## Run locally
 
@@ -444,3 +443,12 @@ Exact money, measurement caveats and causal boundaries remain controlled by code
 
 See the [release status](docs/release-progress.md) for the remaining work.
 Each next milestone starts after a new proceed request.
+
+## Google report integration
+Read-only Ads, GA4 and Search Console extraction preserves exact money, source timezone
+and report coverage in bounded staging. Live credentials and reconciliation are pending;
+aggregate reports are not automatically activated as canonical event/order data.
+
+- [Setup, contracts and verification gates](docs/google-integrations.md)
+- [Learning guide](docs/learning-google.md)
+- [M24 report](docs/milestone-24.md)

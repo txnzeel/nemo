@@ -125,3 +125,10 @@ Catalog origin labels are assertions, not provenance certification. The local AP
 preserves descriptive, diagnostic, experimental and conditional evidence distinctions
 already present in service outputs. See [API contracts](api.md) for authorization,
 exact-money client requirements and deployment limitations.
+
+## Milestone 24 reporting ingestion
+Google REST extraction writes a bounded, versioned aggregate staging contract.
+It cannot fabricate canonical sessions/orders or activate downstream analytics.
+Provider timezone, coverage and exact-money conversion gates precede future canonical
+mapping. Existing analytical modules remain vendor-independent. See
+[Google contracts and setup](google-integrations.md); all live verification is pending.
