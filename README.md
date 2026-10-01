@@ -6,7 +6,7 @@ Nexus for Engagement, Measurement & Optimization: an evidence-driven Growth Deci
 Intelligence Platform in development. NEMO's intended output is an auditable Decision
 Case, linking trustworthy observations to evidence, actions, and measured outcomes.
 
-**Current status: implemented through M25, with M20 MMM fitting deferred.**
+**Current status: implemented through M26, with M20 MMM fitting deferred.**
 Google extraction remains staged and live verification is pending; Airflow is locally
 verified with production scheduling disabled.
 Canonical contracts, dbt/DuckDB, evidence-gated analytics, a local FastAPI service,
@@ -463,3 +463,12 @@ until arrival, window, alerting and recovery policies are configured.
 - [Core runner and Airflow operations](docs/orchestration.md)
 - [Learning guide](docs/learning-orchestration.md)
 - [M25 report](docs/milestone-25.md)
+
+## Reliability and security
+Measured local service latency, bounded web response reads and redirect rejection
+complement the existing canonical validation, authentication and atomic publication.
+Dependency security updates preserve the frozen analytical code and runtime versions.
+
+- [Measurements, audit scope and production gates](docs/reliability-security.md)
+- [Learning guide](docs/learning-reliability.md)
+- [M26 report](docs/milestone-26.md)

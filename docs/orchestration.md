@@ -49,6 +49,7 @@ Use a Linux/WSL environment and an operator-chosen runtime path:
 ```sh
 uv venv /absolute/airflow-venv --python 3.12
 uv pip install --python /absolute/airflow-venv/bin/python -r orchestration/requirements.txt
+uv pip install --python /absolute/airflow-venv/bin/python -r orchestration/security-requirements.txt
 export AIRFLOW_HOME=/absolute/airflow-state
 export AIRFLOW__CORE__LOAD_EXAMPLES=False
 export AIRFLOW__CORE__DAGS_FOLDER=/absolute/nemo/orchestration

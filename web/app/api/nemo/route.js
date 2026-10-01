@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 import pathModule from "node:path";
 import { exactJSON, apiPath, sameOrigin } from "../../../lib/contracts.mjs";
+import { boundedJSON, fetchLocal } from "../../../lib/upstream.mjs";
 export const dynamic = "force-dynamic";
 export async function GET(request) {
   if (!sameOrigin(request.headers))
@@ -51,12 +52,9 @@ export async function GET(request) {
       { status: 503 },
     );
   try {
-    const response = await fetch(base + path, {
-      headers: { Authorization: "Bearer " + process.env.NEMO_READ_TOKEN },
-      cache: "no-store",
-      signal: AbortSignal.timeout(60000),
-    });
-    if (!response.ok)
+    const response = await fetchLocal(base + path, process.env.NEMO_READ_TOKEN);
+    if (!response.ok) {
+      await response.body?.cancel();
       return Response.json(
         {
           error: "Analysis unavailable",
@@ -64,7 +62,8 @@ export async function GET(request) {
         },
         { status: response.status },
       );
-    return Response.json(exactJSON(await response.text()));
+    }
+    return Response.json(await boundedJSON(response));
   } catch {
     return Response.json(
       {
